@@ -1,0 +1,59 @@
+$font-family: 'Avenir Next';
+$font-size: 16px;
+$primary-color: #c47575;
+$transition-timing: 1s;
+$text-color: #93f8ff;
+$border-color: #93f8ff;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow: hidden;
+	font-family: $font-family, 'Helvetica Neue', 'Sans-Serif';
+	font-size: $font-size;
+	background-color: $primary-color;
+	color: $text-color;
+}
+
+#svgContainer {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+svg {
+	position: absolute;
+	box-shadow: 0px 0px 0px $primary-color;
+}
+
+#svgShape {
+	position: relative;
+	fill: none;
+	stroke: black;
+	stroke-width: 6px;
+	stroke: $border-color;
+	stroke-dasharray: 213 500;
+	stroke-dashoffset: -500;
+	transition: stroke-width $transition-timing, stroke-dasharray $transition-timing, stroke-dashoffset $transition-timing;
+}
+
+svg:hover {
+	#svgShape {
+		stroke-width: 3px;
+		stroke-dasharray: 860;
+		stroke-dashoffset: 0;
+	}
+}
+
+#svgText {
+	position: relative;
+	font-size: $font-size * 2.5;
+	font-weight: 100;
+	z-index: -1;
+}
